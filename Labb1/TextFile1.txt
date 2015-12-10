@@ -1,0 +1,126 @@
+****ÖVNING 1****
+
+1. Vad står CLR för, och vad används den till?
+
+CLR - Common Language Runtime 
+Kärnkomponenten i .NET ramverket är CLRen, vilket hanterar programutföranden. 
+Det är en virtuell maskin (dator i en dator). En interpretator
+ (översätter CIL kod till maskinkod som vår dator förstår) samt en
+ JIT-kompilering (Just in time) Kompilerar bara om den behöver det. 
+
+Den förser följande tjänster:
+* Automtic garbage collection
+* Security and authentication
+* Extensive programming functionality through access to the BCL -including functionality such as 
+web servcices and data services.
+
+
+-------------------------------------------------------------------------------------------------
+2. Vad är BCL?
+
+BCL - Base Class Library
+Är ett stort klassbibliotek som används av .NET ramverket.
+Det innehåller:
+* Generella basklasser - klasser som förser dig med ett kraftfullt set av verktyg för en rad olika programmeringsuppgifter,
+såsom filmanipulation, strängmanipulation, säkerhet och ekryptering.
+* Kollektionsklasser - Klasser som implementerar listor, ordlexikon, hash tables och bit arrays.
+* Trådning och synkronisationsklasser - Klasser som som bygger multitrådade program.
+* XML klasser - Klasser som skapar, läser och manipulerar XML-dokument.
+
+-------------------------------------------------------------------------------------------------
+3. Vad innebär det att kompilera källkod?
+
+Kompilering innebär att en textfil skriven i ett programspråk översätts till ett annat språk. Då en
+källkodsfil med C# kompileras skapas en fil kallad assembly. En assembly är antingen en
+exekveringsbar fil eller en DLL.
+
+--------------------------------------------------------------------------------------------------
+4. Den första kompileringen av källkod genererar en assembly i CIL-format. Vad står CIL för?
+
+CIL - Common Intermediate Language 
+Kompilatorn för ett .Net språk tar en källkod och producerar en fil som kallas assembly.
+En assembly är antingen en exe eller en dll.
+* Exe (program som körs) 
+* Dll (bibliotek) 
+ 
+Består av ettor och nollor. 
+Är ej maskinkod. Går att flytta till annan dator (om den är kompatibel) 
+-------------------------------------------------------------------------------------------------
+
+5. Vad kallas den andra kompileringen, dvs den som tar en assembly på CIL-format och omvandlar till maskinkod? 
+Här bör du känna till både förkortning och vad den står för. När sker denna kompilering normalt?
+
+Programmets CIL är inte kompilerat till maskinkod förrän det kallas till "run". 
+I Runtime utför CLRen följande steg:
+
+* Den kollar assemblyns säkerhetskaraktärer
+* Den lokaliserar utrymme i minnet
+* Den skickar assemblyns körbara kod till just-in-time (JIT) kompilatorn, vilken kompilerar delar 
+av koden till maskinkod. Den körbara koden i assemblyn är kompilerad av JIT kompilatorn när det behövs. 
+Den cachas sedan, ifall den behöver köras igen senare i programmet. Genom att använda denna process betyder 
+det att kod som inte kallas under utförandet inte kompileras till maskinkod, och att kod som faktiskt 
+kallas endast kompileras en gång. 
+
+---------------------------------------------------------------------------------------------------
+6. Nämn en fördel och en nackdel med att .NET-program körs i en runtime-miljö.
+
+Fördel:
+* Automtic garbage collection
+* Security and authentication
+* Extensive programming functionality through access to the BCL -including functionality such as 
+web servcices and data services.
+
+Nackdel: Det går långsamt att kompilera.
+
+---------------------------------------------------------------------------------------------------
+
+****ÖVNING 2****
+
+7. Vad är en identifierare?
+Identifierare är strängar som används för att namnge/identifiera variabler, metoder, parametrar.
+--------------------------------------------------------------------------------------------------------
+
+8. Hur får en identifierare se ut?
+Alfabetet z-Z och A-Z får användas. Nummer får ej användas i första positionen men överallt annars.
+@ får användas i första position (men ingen annanstans) men bör helst inte användas.
+----------------------------------------------------------------------------------------------------------
+9. Vad är camel case och pascal case?
+Camelcase: Ett sätt att skriva samman ord utan bindestreck eller mellanslag, men med inledande versal på varje ingående orddel.
+Den första boskatven skall dock vara liten. Används i metod argument och lokala variabler.
+Pascal case: Här skall första bokstaven i varje nytt ord vara stor. Används i Propertyn. (klassnamn och metodnamn).
+--------------------------------------------------------------------------------------------------------------
+10. Vad är nyckelord?
+Nyckelord är ord som definierar C# språket. De kan inte användas som variabler eller annan form av identifierare,
+om inte @ placeras före ordet. Alla C# nyckelord består av små bokstäver. 
+---------------------------------------------------------------------------------------------------------------
+11. Vad innebär det att C# är case sensitive?
+Att C# är känslig för text, eller inmatad text, som använder versaler. 
+Att det är skillnad på exempel main() och Main().
+------------------------------------------------------------------------------------------------------------------
+12. Kompilatorn struntar i s.k. whitespace, men för tydlighetens skulle bör alltid källkod formatteras för maximal läsbarhet. 
+Nämn ett par olika typer av whitespace.
+* Space
+* Tab
+* New Line
+* Carriage return
+----------------------------------------------------------------------------------------------------------------------
+13. Vilket tecken används för att avsluta ("terminera") ett uttryck?
+Ett semikolon ;
+------------------------------------------------------------------------------------------------------------------------
+14. Flera uttryck kan grupperas tillsammans till ett s.k. block, t.ex. för att utföras tillsammans om ett villkor är uppfyllt.
+Hur grupperas uttryck?
+Man omsluter grupperingen i matchande fiskmåsvingar. 
+------------------------------------------------------------------------------------------------------------------------
+15. När bör källkod kommenteras? Vilka olika kommentarstyper finns, och hur anges de?
+När du tydligt vill förklara kodens innebörd.
+Vid ett längre stycke används /**/ (delimited)
+och vid en rad används // (single line)
+vid dokumentation används /// (documentation)
+
+-------------------------------------------------------------------------------------------------------------------------
+****ÖVNINGSUPPGIFTER****
+
+**UPPGIFT 1**
+
+
+

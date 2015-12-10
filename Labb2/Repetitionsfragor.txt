@@ -1,0 +1,97 @@
+﻿Övning 2
+
+Denna övning hör till kapitel 3 i boken.
+
+Repetitionsfrågor
+---------------------------------------------------------------------------------------------------------------------------------
+1. Vad innebär det att instantiera en typ?
+Att skapa ett faktiskt objekt från datatypens mall.
+Det objekt som skapas genom instansiering kallas antingen object eller en instans av typen.
+
+----------------------------------------------------------------------------------------------------------------------------------
+2. En instans av en typ kan även kallas något annat, vad?
+Ett object
+
+----------------------------------------------------------------------------------------------------------------------------------
+3. C# skiljer på värdetyper och referenstyper. Placera följande typer i rätt kategori: int, string, bool, double, object, char
+
+* int = värde
+* string = referens
+* bool = värde
+* double = värde
+* object = referens
+* char = värde
+
+-----------------------------------------------------------------------------------------------------------------------------------
+4.Att skapa program i C# handlar ytterst sett om att definiera egna datatyper, som i sin tur använder andra typer.
+ Nämn ett par olika sorters datatyper som kan skapas, både referenstyper och värdetyper.
+
+ struct, enum = värdetyper
+ class,interface,delegate,array = referenstyper
+
+ -----------------------------------------------------------------------------------------------------------------------------------
+5. Vad innebär stack och heap för ett C#-program?
+
+Stack:
+Stacken är en minnesplats som ligger på ett vanligt Ram-minne. 
+Det är en snabb minneshanterare som kan hålla reda på en begränsad mängd information. 
+Deklarationer av olika typer får plats på stacken utan problem. Den lagrar olika typer av data.
+Stora objekt däremot läggs istället på heapen. 
+Stacken är en array av minne som fungerar som en last-out,last-in(LIFO) data struktur.
+
+Generella funktioner i stacken:
+* Data kan adderas och raderas endast från toppen av stacken.
+* Att placera ett objekt på toppen av stacken kallas att "push".
+* Att radera ett objekt från toppen av stacken kallas "pop".
+
+Heap:
+* Alla referenstyper/referensobjekt hamnar på Heapen.
+* Referenstyper använder i regel nyckelordet new när man tilldelar deklarationen ett värde
+* Lägger man inte till ett värde så kommer referensen att ha värdet null.
+* Deklarationen av objektet läggs på stacken, 
+sen pekar deklarationen på själva objektet på heapen
+
+Om man tar en kopia på ett objekt som pekar på samma värde på heapen,
+ så ändras bådas värde om man gör en förändring i det ena. Datan kan 
+ lagras och raderas i vilken ordning som helst, till skillnad från stacken. 
+ CLR's Garbage collector(GC) gör sig av med onödig kod som ej används längre.
+
+ ------------------------------------------------------------------------------------------------------------------------------------
+6. Vad är en variabel? Hur skapas en variabel? Vad innebär det att initiera en variabel? Vad menas med att tilldela en variabel ett värde?
+
+* En variabel är ett namn som representerar data som lagras i ett programutförande
+Det finns 4 olika sorters variabler. 
+
+* En variabel måste deklareras innan den kan användas. Variabel deklarationen definierar variabeln och
+åstadkommer två saker:
+- det ger variabeln ett namn(var) och associeras med en type(int). 
+- det tillåter kompilatorn att spara minne åt den.
+Exempel på en deklarerad variabel: int var;  
+
+* Bortsett från att deklarera en variabels namn och en typ, så kan man även använda deklarationen 
+till att initilialisera dess minne till ett specifikt värde. 
+
+* En variabel initialiserare består av ett lika med tecken = följt av det initialiserade värdet.
+Ex: int var = 17;
+En lokal variabel utan en initialiserare har ett odefinierad värde och kan inte användas förrän
+de har tilldelats ett värde. 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Övningar
+
+Uppgift 1
+
+Skapa ett nytt konsol-projekt med lämpligt namn. Testa att skapa lämpliga variabler för meningarna nedan i Main. Ändra sedan i variablerna och skriv ut igen. Använd format strings för utskrifter.
+
+Exempel:   int year = 34;
+
+            Console.WriteLine("Hej jag är {0} år", year);
+
+                 Year = 55;
+
+            Console.WriteLine("Hej jag är {0} år", year);
+
+Dow Jones sjönk med 4,6 procent och Nasdaq med 4,1 procent. Stockholm -2,4 procent, Milano -6,7 procent, Paris -5,5 procent.
+Talet π är cirka 3.141592654 men kan avrundas till 3.14 och kan lite grovt skrivas som 3.
+Han heter Jonas och bor i Helsingborg på Stattena vid Hemköp.
