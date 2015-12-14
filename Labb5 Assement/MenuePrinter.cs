@@ -13,7 +13,7 @@ namespace Labb5_Assement
         string name;
         string type;
         int stockCount;
-        bool isEco;
+        string mark;
 
         public string MenueChoise
         {
@@ -27,11 +27,62 @@ namespace Labb5_Assement
 
         public int Id
         {
-            get{return id;}
+            get { return id; }
             set
             {
                 if (value >= 1 && value <= 99)
                     id = value;
+                else
+                    Console.WriteLine("Incorerct input, try again!");
+            }
+
+        }
+
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                if (value == "juice" || value == "plate")
+                    name = value;
+                else
+                    Console.WriteLine("Invalid name, try again!");
+            }
+        }
+
+        public string Type
+        {
+            get { return type; }
+            set
+            {
+                if (value == "apple" || value == "orange" || value == "deep" || value == "flat")
+                    type = value;
+                else
+                    Console.WriteLine("Wrong type!");
+            }
+        }
+
+        public string Mark
+        {
+            get { return mark; }
+            set
+            {
+                if (value == "krav" || value == "EG" || value == "other")
+                    mark = value;
+            }
+        }
+
+        public int StockCount
+        {
+            get { return stockCount; }
+            set
+            {
+                if (value >= 1 && value <= 1000)
+                    stockCount = value;
+                else if (value <= 0)
+                    Console.WriteLine("Must be a positive number added to our glorious stock!");
+                else
+                    Console.WriteLine("Can't hold more than 1000!");
             }
         }
 
@@ -56,13 +107,90 @@ namespace Labb5_Assement
 
         public void CreateItem()
         {
+            Console.WriteLine("To make an item we need Id, Name, Type, Stock count and if it's an ecological item.\r\n" +
+                              "Enter the new items Id (1-99)");
+            int result;
+            string input;
+            while (true)
+            {
+                input = Console.ReadLine();
+                if (int.TryParse(input, out result))
+                {
+                    Id = result;
+                    if (Id > 0 && Id < 100)
+                    {
+                        break;
+                    }
+                }
+            }
+            Console.WriteLine("Enter the new items Name (plate or juice)");
+            while (true)
+            {
+                Name = Console.ReadLine();
+                if (Name == "juice" || Name == "plate")
+                {
+                    break;
+                }
 
-            Console.WriteLine("To make an item we need Id, Name, Type, Stock count ad if it's an ecological item.\r\n" +
-                                  "Enter the new items Id (1-99)");
-            Id = int.TryParse() Console.ReadLine();
+            }
+            if (Name == "juice")
+            {
+                Console.WriteLine("Enter the type (apple or orange)");
+                while (true)
+                {
+                    Type = Console.ReadLine();
+                    if (Type == "apple" || Type == "orange")
+                    {
+                        break;
+                    }
+                }
+                Console.WriteLine("Is the juice; krav, EG or other?");
+                while (true)
+                {
+                    Mark = Console.ReadLine();
+                    if (Mark == "krav" || Mark == "EG" || Mark == "other")
+                    {
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Enter the type (deep or flat)");
+                while (true)
+                {
+                    Type = Console.ReadLine();
+                    if (Type == "deep" || Type == "flat")
+                    {
+                        break;
+                    }
+                }
+            }
+            Console.WriteLine("Enter the amount of items you wish to add to the stock");
 
+            while (true)
+            {
+                input = Console.ReadLine();
+                if (int.TryParse(input, out result))
+                {
+                    StockCount = result;
+                    if (StockCount >= 1 && StockCount <= 1000)
+                    {
+                        break;
+                    }
+                }
+            }
+        }
 
-            //AddItem();
+        public void InventoryItem(StockItem[] stockitems, int id, int stockCount)
+        {
+            for (int i = 0; i < stockitems.Length; i++)
+            {
+                if (stockitems[i].Id == id)
+                    stockitems[i].StockCount = stockCount;
+                else
+                    Console.WriteLine("No item(s) found!");
+            }
         }
     }
 }

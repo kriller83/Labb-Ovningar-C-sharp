@@ -10,12 +10,27 @@ namespace Labb5_Assement
     {
         static void Main(string[] args)
         {
+            string id;
+            string stockCount;
+            string input;
+            int result;
             MenuePrinter mainMenue = new MenuePrinter();
             Stock stock = new Stock();
             int menueChoise = mainMenue.StartMenue();
             if (menueChoise == 1)
             {
                 mainMenue.CreateItem();
+            }
+            else if(menueChoise == 2)
+            {
+                Console.WriteLine("Enter the id of the item");
+                while (true)
+                {
+                    input = Console.WriteLine();    // Nått fel hä?!?!?
+                    if (int.TryParse(input, out result))
+                        
+                }
+                mainMenue.InventoryItem(stockitems:stock.stockItems,id:);
             }
 
 
