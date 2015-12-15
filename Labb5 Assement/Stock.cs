@@ -8,13 +8,6 @@ namespace Labb5_Assement
 {
     class Stock
     {
-        //private StockItem[] stockItem;
-
-        //public StockItem[] Stockitem
-        //{
-        //    get { return stockItem; }
-        //    set { stockItem = value; }
-        //}
         int counter = 0;
 
         public StockItem[] StockItems = new StockItem[10];
@@ -27,7 +20,7 @@ namespace Labb5_Assement
                 else
                     throw new Exception("Out of boundary");
             }
-           private set
+           private set  //är private för att vi använder oss av AddItem 
             {
                 if (index >= 0 && index < StockItems.Length)
                     StockItems[index] = value;

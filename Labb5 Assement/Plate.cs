@@ -15,7 +15,7 @@ namespace Labb5_Assement
             get { return type; }
             set
             {
-                if (value == "flat" || value == "deep")
+                if (value.ToLower() == "flat" || value.ToLower() == "deep")
                     type = value;
                 else
                     throw new Exception("Wrong shape!");

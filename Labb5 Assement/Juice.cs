@@ -15,7 +15,7 @@ namespace Labb5_Assement
             get { return type; }
             set
             {
-                if (value == "apple" || value == "orange")
+                if (value.ToLower() == "apple" || value.ToLower() == "orange")
                     type = value;
                 else
                     throw new Exception("Wrong fruit!");

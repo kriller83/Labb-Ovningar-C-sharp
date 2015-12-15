@@ -16,6 +16,10 @@ namespace Labb5_Assement
             int result;
             MenuePrinter mainMenue = new MenuePrinter();
             Stock stock = new Stock();
+            stock.AddItem(new Juice { Id = 2, Mark = "krav",  Name = "juice", StockCount = 10, Type = "apple"});
+            stock.AddItem(new Juice {Id = 3, Mark = "EG", Name = "juice", StockCount = 20, Type = "orange"});
+            stock.AddItem(new Plate {Id = 4, Name = "plate", Type = "deep", StockCount = 15});
+            stock.AddItem(new Plate {Id = 5, Name = "plate", Type = "flat", StockCount = 25});
             while (true)
             {
                 int menueChoise = mainMenue.StartMenue();
@@ -68,28 +72,6 @@ namespace Labb5_Assement
                     break;
                 }
             }
-
-
-
-            //Juice bravo1 = new Juice() {
-            //    Type = "orange",
-            //    Mark = "Krav",
-            //    Id = 1,
-            //    Name = "Bravo",
-            //    StockCount = 3 };
-
-            //Plate flatPlate1 = new Plate() { Type = "flat", Id = 2, Name = "Flat plate", StockCount = 30 };
-            //stock[0] = bravo1;
-            //stock[1] = flatPlate1;
-
-            //stock.AddItem(bravo1);
-            //stock.AddItem(flatPlate1);
-            //Console.WriteLine(stock.GetItem(2));
-
-
-
-            //stock.Stockitem[0] = flatPlate;
-            //stock.Stockitem[1] = bravo;
         }
     }
 }

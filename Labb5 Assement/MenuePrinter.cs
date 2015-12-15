@@ -88,7 +88,6 @@ namespace Labb5_Assement
 
         public int StartMenue()
         {
-            bool runTime = true;
             Console.WriteLine(@"1 - Skapa vara
 2 - Inventera vara
 3 - Lista varor
@@ -105,7 +104,7 @@ namespace Labb5_Assement
             return int.Parse(MenueChoise);
         }
 
-        public Stock CreateItem(Stock stock)
+        public Stock CreateItem(Stock stock)  
         {
             StockItem stockitem;
             Console.WriteLine("To make an item we need Id, Name, Type, Stock count and if it's an ecological item.\r\n" +
@@ -153,11 +152,11 @@ namespace Labb5_Assement
                         break;
                     }
                 }
-                Console.WriteLine("Is the juice; krav, EG or other?");
+                Console.WriteLine("Is the juice; krav, EG?");
                 while (true)
                 {
                     Mark = Console.ReadLine();
-                    if (Mark == "krav" || Mark == "EG" || Mark == "other")
+                    if (Mark == "krav" || Mark == "EG")
                     {
                         break;
                     }
@@ -220,8 +219,12 @@ namespace Labb5_Assement
             {
                 if (stockItem != null)
                 {
-                    //Console.WriteLine(stockItem);
-                    Console.WriteLine($"Id: {stockItem.Id}, Name: {stockItem.Name}");
+                    Console.Write(stockItem);
+                    //Console.Write($"Id: {stockItem.Id}, Name: {stockItem.Name} In stock: {stockItem.StockCount}");
+                    if (stockItem is EcoStockItem)
+                        Console.WriteLine(" This is an ecological item.");
+                    else
+                        Console.WriteLine();
                 }
             }
         }

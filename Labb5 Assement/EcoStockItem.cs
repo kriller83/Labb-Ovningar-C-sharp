@@ -15,7 +15,7 @@ namespace Labb5_Assement
             get { return mark; }
             set
             {
-                if (value == "krav" || value == "EG" || value == "other")
+                if (value.ToLower() == "krav" || value.ToUpper() == "EG")
                     mark = value;
                 else
                     throw new Exception("Not a ecological!");
