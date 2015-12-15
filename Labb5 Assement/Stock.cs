@@ -17,20 +17,20 @@ namespace Labb5_Assement
         //}
         int counter = 0;
 
-        public StockItem[] stockItems = new StockItem[10];
+        public StockItem[] StockItems = new StockItem[10];
         public StockItem this[int index]  //this syftar till instansen
         {
             get
             {
-                if (index >= 0 && index < stockItems.Length)   //Kontroll på at man hämtar värden inom arrayns gränser
-                    return stockItems[index];
+                if (index >= 0 && index < StockItems.Length)   //Kontroll på at man hämtar värden inom arrayns gränser
+                    return StockItems[index];
                 else
                     throw new Exception("Out of boundary");
             }
            private set
             {
-                if (index >= 0 && index < stockItems.Length)
-                    stockItems[index] = value;
+                if (index >= 0 && index < StockItems.Length)
+                    StockItems[index] = value;
                 throw new Exception("Out of boundary");
             }
         }
@@ -38,19 +38,18 @@ namespace Labb5_Assement
         public void AddItem(StockItem item)
         {
 
-            stockItems[counter] = item;
+            StockItems[counter] = item;
             counter++;
         }
 
         public StockItem GetItem(int itemId)
         {
-            for (int i = 0; i < stockItems.Length; i++)
+            foreach (StockItem item in StockItems)
             {
-                if (stockItems[i].Id == itemId)
-                    return stockItems[i];
+                if (item.Id == itemId)
+                    return item;
             }
             throw new Exception("No item with that Id!");
         }
-
     }
 }

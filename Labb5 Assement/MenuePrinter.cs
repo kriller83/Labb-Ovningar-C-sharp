@@ -105,8 +105,9 @@ namespace Labb5_Assement
             return int.Parse(MenueChoise);
         }
 
-        public void CreateItem()
+        public Stock CreateItem(Stock stock)
         {
+            StockItem stockitem;
             Console.WriteLine("To make an item we need Id, Name, Type, Stock count and if it's an ecological item.\r\n" +
                               "Enter the new items Id (1-99)");
             int result;
@@ -129,6 +130,14 @@ namespace Labb5_Assement
                 Name = Console.ReadLine();
                 if (Name == "juice" || Name == "plate")
                 {
+                    if (Name == "juice")
+                    {
+                        stockitem = new Juice() { Id = id };
+                    }
+                    else if (Name == "plate")
+                    {
+                        stockitem = new Plate() { Id = id };
+                    }
                     break;
                 }
 
@@ -180,17 +189,41 @@ namespace Labb5_Assement
                     }
                 }
             }
+            if (name == "juice")
+            {
+                stockitem = new Juice() { Mark = mark, Id = id, Name = name, StockCount = stockCount, Type = type };
+            }
+            else
+            {
+                stockitem = new Plate() { Id = id, Name = name, StockCount = stockCount, Type = type };
+            }
+            stock.AddItem(stockitem);
+            return stock;
         }
 
         public void InventoryItem(StockItem[] stockitems, int id, int stockCount)
         {
-            for (int i = 0; i < stockitems.Length; i++)
+            for (int i = 0; i < stockitems.Length - 1; i++)
             {
-                if (stockitems[i].Id == id)
+                if (stockitems[i] != null && stockitems[i].Id == id)
+                {   //Om stockitems inte är lika med noll så kollar den nästa check.
                     stockitems[i].StockCount = stockCount;
-                else
-                    Console.WriteLine("No item(s) found!");
+                    return;
+                }
+            }
+            Console.WriteLine("No item(s) found!");
+        }
+
+        public void ListItems(StockItem[] stockItems)
+        {
+            foreach (var stockItem in stockItems)
+            {
+                if (stockItem != null)
+                {
+                    //Console.WriteLine(stockItem);
+                    Console.WriteLine($"Id: {stockItem.Id}, Name: {stockItem.Name}");
+                }
             }
         }
-    }
+    }                                                               //Fixa ListItems och lägg till confim meddelanden!
 }

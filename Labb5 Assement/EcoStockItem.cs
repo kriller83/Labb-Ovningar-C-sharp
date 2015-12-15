@@ -15,7 +15,7 @@ namespace Labb5_Assement
             get { return mark; }
             set
             {
-                if (value == "Krav" || value == "EG")
+                if (value == "krav" || value == "EG" || value == "other")
                     mark = value;
                 else
                     throw new Exception("Not a ecological!");
