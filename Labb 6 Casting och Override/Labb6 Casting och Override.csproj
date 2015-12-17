@@ -48,9 +48,8 @@
     <Compile Include="Literals.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Point3D.cs" />
-    <Compile Include="MyDoubleType.cs" />
     <Compile Include="MyDoubleTypeStruct.cs" />
-    <Compile Include="test.cs" />
+    <Compile Include="MyDoubleType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

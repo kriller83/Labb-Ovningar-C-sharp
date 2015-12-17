@@ -14,19 +14,19 @@ namespace Labb6_Casting_och_Override
             //Uppgift3();
             //Uppgift1();
 
-            //MyDoubleType mdt1 = new MyDoubleType(5);
-            //MyDoubleType mdt2 = mdt1 + 5;
-            //MyDoubleType mdt3 = mdt1 + mdt2;
-            //MyDoubleType mdt4 = new MyDoubleType(5);
-            //Console.WriteLine("{0}, {1}, {2}, {3}, {4}", mdt1, mdt2, mdt3, mdt1 > mdt2, mdt1 == mdt4);
-
-            MyDoubleTypeStruct mdt1 = new MyDoubleTypeStruct(5);
-            MyDoubleTypeStruct mdt2 = mdt1 + 5;
-            MyDoubleTypeStruct mdt3 = mdt1 + mdt2;
-            MyDoubleTypeStruct mdt4 = new MyDoubleTypeStruct(5);
+            MyDoubleType mdt1 = new MyDoubleType(5);
+            MyDoubleType mdt2 = mdt1 + 5;
+            MyDoubleType mdt3 = mdt1 + mdt2;
+            MyDoubleType mdt4 = new MyDoubleType(5);
             Console.WriteLine("{0}, {1}, {2}, {3}, {4}", mdt1, mdt2, mdt3, mdt1 > mdt2, mdt1 == mdt4);
 
-            
+            //MyDoubleTypeStruct mdt1 = new MyDoubleTypeStruct(5);
+            //MyDoubleTypeStruct mdt2 = mdt1 + 5;
+            //MyDoubleTypeStruct mdt3 = mdt1 + mdt2;
+            //MyDoubleTypeStruct mdt4 = new MyDoubleTypeStruct(5);
+            //Console.WriteLine("{0}, {1}, {2}, {3}, {4}", mdt1, mdt2, mdt3, mdt1 > mdt2, mdt1 == mdt4);
+
+
             Console.ReadLine();
         }
 
