@@ -50,6 +50,7 @@
     <Compile Include="Point3D.cs" />
     <Compile Include="MyDoubleType.cs" />
     <Compile Include="MyDoubleTypeStruct.cs" />
+    <Compile Include="test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
