@@ -45,11 +45,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Uppgift1.cs" />
-    <Compile Include="Uppgift2.cs" />
-    <Compile Include="Uppgift3.cs" />
-    <Compile Include="Uppgift4.cs" />
-    <Compile Include="Uppgift5.cs" />
+    <Compile Include="Literals.cs" />
+    <Compile Include="Point.cs" />
+    <Compile Include="Point3D.cs" />
+    <Compile Include="MyDoubleType.cs" />
+    <Compile Include="MyDoubleTypeStruct.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
