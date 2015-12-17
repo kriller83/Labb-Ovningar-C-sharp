@@ -26,7 +26,7 @@ namespace Labb6_Casting_och_Override
             MyDoubleTypeStruct mdt4 = new MyDoubleTypeStruct(5);
             Console.WriteLine("{0}, {1}, {2}, {3}, {4}", mdt1, mdt2, mdt3, mdt1 > mdt2, mdt1 == mdt4);
 
-
+            
             Console.ReadLine();
         }
 
